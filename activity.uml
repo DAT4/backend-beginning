@@ -1,0 +1,12 @@
+@startuml
+title "Log in and play game Use case"
+start
+:Log in to api;
+:Click "want to play" button;
+repeat
+    :wait for players;
+    repeat while (players < 4) is (yes)
+-> no;
+:Establish websocket connection;
+:Play game;
+@enduml

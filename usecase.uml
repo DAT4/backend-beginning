@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+actor "User" as user
+
+
+rectangle Game {
+    usecase "Login and play game" as login
+    usecase "Sign up" as register
+}
+
+user --> login
+user --> register
+
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+package Server {
+    object NGINX
+    object Database
+    object Backend
+}
+object Game
+@enduml
