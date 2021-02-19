@@ -1,0 +1,10 @@
+[Unit]
+Description="API server for group 4 in the backend course"
+
+[Service]
+Type=simple
+Environment="NAVN=martin"
+ExecStart=/var/www/api/backend
+
+[Install]
+WantedBy=multi-user.target

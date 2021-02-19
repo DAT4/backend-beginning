@@ -2,13 +2,13 @@ import requests,json, uuid, re
 
 def createUser():
     url = 'https://api.backend.mama.sh/user'
-    ip = requests.get('http://httpbin.org/ip')
+    ip = requests.get('http://httpbin.org/ip').json()['origin']
     mac = ':'.join(re.findall('..', '%012x' % uuid.getnode()))
     user = {
-            'email': 'mama@mama.sh',
-            'password': 'abcabc',
-            'name': 'Martin Maartensson',
-            'ip': ip.json()['origin'],
+            'email': 'newuser@emil.sh',
+            'password': 'lalalalal',
+            'name': 'Peter Pan',
+            'ip': ip,
             'mac': mac,
             }
 
@@ -25,4 +25,5 @@ def listUsers():
     msg = requests.get(url)
     print(msg.text)
 
+createUser()
 listUsers()
